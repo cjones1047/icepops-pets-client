@@ -1,4 +1,4 @@
-import PetsIndex from "./shared/Pets/PetsIndex"
+import PetsIndex from "./Pets/PetsIndex"
 
 const Home = (props) => {
 	// const { msgAlert, user } = props
@@ -6,7 +6,7 @@ const Home = (props) => {
 
 	return (
 		<>
-			<h2>Home Page</h2>
+			<h2>See the pets:</h2>
 			<PetsIndex />
 		</>
 	)
