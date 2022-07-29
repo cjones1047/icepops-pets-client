@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react'
 // STUFF FROM ELSEWHERE
 import Card from 'react-bootstrap/Card'
 import { Link } from 'react-router-dom'
+import messages from '../shared/AutoDismissAlert/messages'
 
 
 // STUFF FROM MY OWN CODE
@@ -22,12 +23,23 @@ const cardContainerStyle = {
 const PetsIndex = (props) => {
 
     const [pets, setPets] = useState(null)
+    const [error, setError] = useState(false)
+
+    const { msgAlert } = props
 
     useEffect(() => {
         // console.log('use effect works')
+        console.log(props)
         getAllPets()
             .then(res => setPets(res.data.pets))
-            .catch(err => console.log(err))
+            .catch(err => {
+                msgAlert({
+                    heading: 'Error Getting Pets',
+                    message: messages.getPetsFailure,
+                    variant: 'danger'
+                })
+                setError(true)
+            })
     }, [])
 
     // if pets haven't been loaded yet, show a loading message
