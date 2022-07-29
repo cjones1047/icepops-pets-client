@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+     import { useState, useEffect } from 'react'
 // PetsIndex should make a request to the api
 // To get all pets
 // Then display them when it gets them
@@ -27,6 +27,7 @@ const PetsIndex = (props) => {
 
     const { msgAlert } = props
 
+    
     useEffect(() => {
         // console.log('use effect works')
         console.log(props)
@@ -41,6 +42,8 @@ const PetsIndex = (props) => {
                 setError(true)
             })
     }, [])
+    
+    if(error) return <p>Error</p>;
 
     // if pets haven't been loaded yet, show a loading message
     if(!pets) {
