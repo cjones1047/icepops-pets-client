@@ -13,7 +13,7 @@ import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
 import ShowPet from './components/pets/ShowPet'
-import PetForm from './components/shared/PetForm'
+import CreatePet from './components/pets/CreatePet'
 
 const App = () => {
 
@@ -77,7 +77,7 @@ const App = () => {
 					path='/addPet'
 					element={ 
 						<RequireAuth user={ user }>
-							<PetForm msgAlert={ msgAlert }/>
+							<CreatePet msgAlert={ msgAlert }/>
 						</RequireAuth>
 					}
 				/>
