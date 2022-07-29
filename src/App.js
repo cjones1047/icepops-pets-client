@@ -70,7 +70,7 @@ const App = () => {
 				/>
 				<Route
 					path='/pets/:id'
-					element={ <ShowPet />}
+					element={ <ShowPet msgAlert={ msgAlert }/>}
 				/>
 			</Routes>
 			{msgAlerts.map((msgAlert) => (
