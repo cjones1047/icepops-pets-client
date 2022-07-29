@@ -1,10 +1,11 @@
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 // this will allow us to see our parameters
 import { useParams } from 'react-router-dom'
 
 import LoadingScreen from '../shared/LoadingScreen'
+import { getOnePet } from '../../api/pets'
 
 // We need to get the pet's id from the parameters
 // Then we need to make a request to the api
@@ -16,6 +17,11 @@ const ShowPet = (props) => {
 
     // destructuring to get the id value from our route parameters
     const { id } = useParams()
+
+    useEffect(() => {
+        getOnePet(id)
+            .then(res => setPet(res.data.pet))
+    }, [])
 
     if(!pet) {
         return <LoadingScreen />
