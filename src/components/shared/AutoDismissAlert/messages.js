@@ -8,7 +8,9 @@ const messages = {
 	changePasswordFailure:'Failed to change passwords. Check your old password and try again.',
 	getPetsFailure: 'Error fetching pets.',
 	createPetSuccess: 'Pet created successfully!',
-	createPetFailure: 'Something went wrong, please try again.'
+	createPetFailure: 'Could not create pet, please try again.',
+	updatePetSuccess: 'Pet updated successfully!',
+	updatePetFailure: 'Could not update pet, please try again.'
 }
 
 module.exports = messages

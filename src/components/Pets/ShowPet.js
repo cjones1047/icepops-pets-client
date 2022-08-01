@@ -44,7 +44,7 @@ const ShowPet = (props) => {
                     variant: 'danger'
                 })
             })
-    }, [])
+    }, [updated])
 
     if(!pet) {
         return <LoadingScreen />
