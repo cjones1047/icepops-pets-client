@@ -2,7 +2,7 @@ import apiUrl from '../apiConfig'
 import axios from 'axios'
 
 // CREATE
-export const createToy = (user, newToy) => {
+export const createToy = (user, petId, newToy) => {
     console.log('createToy in API was hit')
     console.log('this is user in createToy', user)
     console.log('this is newToy in createToy', newToy)
