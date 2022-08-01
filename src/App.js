@@ -66,7 +66,7 @@ const App = () => {
 					path='/change-password'
 					element={
 						<RequireAuth user={user}>
-						<ChangePassword msgAlert={msgAlert} user={user} />
+							<ChangePassword msgAlert={msgAlert} user={user} />
 						</RequireAuth>}
 				/>
 				<Route
@@ -77,7 +77,7 @@ const App = () => {
 					path='/addPet'
 					element={ 
 						<RequireAuth user={ user }>
-							<CreatePet msgAlert={ msgAlert }/>
+							<CreatePet msgAlert={ msgAlert } user={ user }/>
 						</RequireAuth>
 					}
 				/>
