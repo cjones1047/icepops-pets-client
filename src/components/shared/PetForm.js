@@ -2,12 +2,16 @@ import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
+import { Container } from 'react-bootstrap'
+
 
 const PetForm = (props) => {
-    const { pet, handleChange } = props
+    const { pet, handleChange, heading, handleSubmit } = props
     return (
       <>
-            <Form style={{margin: '20px'}}>
+        <Container className='justify-content-center'>
+            <h3>{heading}</h3>
+            <Form onSubmit={handleSubmit}>
                 <Row className="mb-3">
                     <Form.Group as={Col}>
                         <Form.Label>Name</Form.Label>
@@ -36,7 +40,7 @@ const PetForm = (props) => {
                     <Form.Group as={Col}>
                         <Form.Label>Type</Form.Label>
                         <Form.Control 
-                            placeholder="Enter pet's breed here"
+                            placeholder="Enter pet's type here"
                             value={ pet.type }
                             name='type'
                             type='text' 
@@ -55,6 +59,7 @@ const PetForm = (props) => {
                     Submit
                 </Button>
             </Form>
+        </Container>
       </>
     );
 }
