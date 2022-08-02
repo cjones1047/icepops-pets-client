@@ -20,7 +20,7 @@ export const updateToy = (user, petId, updatedToy) => {
     console.log('updateToy in API was hit')
     console.log('this is updatedToy', updatedToy)
 	return axios({
-		url: `${apiUrl}/toys/${petId}/${updatedToy.id}`,
+		url: `${apiUrl}/toys/${petId}/${updatedToy._id}`,
 		method: 'PATCH',
 		headers: {
 			Authorization: `Token token=${user.token}`
@@ -35,7 +35,7 @@ export const updateToy = (user, petId, updatedToy) => {
 export const deleteToy = (user, petId, toyId) => {
     console.log('deleteToy in API was hit')
 	return axios({
-		url:`${apiUrl}/pets/${petId}/${toyId}`,
+		url:`${apiUrl}/toys/${petId}/${toyId}`,
 		method: 'DELETE',
 		headers: {
 			Authorization: `Token token=${user.token}`

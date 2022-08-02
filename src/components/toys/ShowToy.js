@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Card, Button } from "react-bootstrap";
-import ToyForm from "../shared/ToyForm";
 import { deleteToy } from "../../api/toys";
 import EditToyModal from "./EditToyModal";
 // import deleteToy for delete button
@@ -36,9 +35,9 @@ const ShowToy = (props) => {
             .then(() => triggerRefresh())
             .catch(() => 
                 msgAlert({
-                    heading: 'Toy Deleted',
-                    message: 'Bye bye toy!',
-                    variant: 'success'
+                    heading: 'Toy not deleted',
+                    message: 'Something went wrong...',
+                    variant: 'danger'
                 })
             )
     }

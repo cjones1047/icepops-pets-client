@@ -1,4 +1,4 @@
-     import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 // PetsIndex should make a request to the api
 // To get all pets
 // Then display them when it gets them
